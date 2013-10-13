@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FE-Builder</title>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-switch.css" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <input id="folder_chose" type="file" nwdirectory style="display: none"/>
+    <nav id='top-bar' class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <span class="navbar-brand">
+                <img class='logo' src="logo.png">
+                FE-Builder
+            </span>
+            <button id="closeBtn" type="button" class="btn btn-default navbar-btn pull-right">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+            <button id="minBtn" type="button" class="btn btn-default navbar-btn pull-right">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+        </div>
+    </nav>
+    <div id="content">
+        <ul id="ul-list" class="list-unstyled">
+            <li>
+                <h1>No Project ...</h1>
+            </li>
+        </ul>
+    </div>
+    <div id="bottom-bar">
+        <span class="glyphicon glyphicon-plus"></span>
+        <span class="glyphicon glyphicon-globe"></span>
+        <span class="glyphicon glyphicon-tasks"></span>
+    </div>
+    <div id="serverControl">
+        <form class="form-inline" role="form" style="width: 440px">
+            <label class="item">Server : </label>
+            <input id="port" type="number" class="item form-control" placeholder="Port" min="1" value="8080">
+            <div class="item">
+                <div class="make-switch switch1" data-on="success" data-off="danger">
+                    <input type="checkbox" checked />
+                </div>
+            </div>
+            <div class="item">
+                <div class="make-switch switch2" data-on="primary" data-on-label="DEV" data-off="warning" data-off-label="PD">
+                    <input type="checkbox" checked />
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="LogInfo">
+        <span class="glyphicon glyphicon-new-window outBtn"></span>
+        <div class="content"></div>
+    </div>
+</body>
+</html>

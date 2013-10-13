@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>FE-Builder Log Panel</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var start = function() {
+        var socket = io.connect('http://127.0.0.1:6888/');
+            socket.on('log', function (data) {
+                var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds();
+                h = h < 10 ? '0' + h : h;
+                m = m < 10 ? '0' + m : m;
+                s = s < 10 ? '0' + s : s;
+                document.body.innerHTML += '<p class="' + data.type + '">[' + data.tag + '] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</p>';
+            });
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #000000;
+        }
+        p{
+            font-weight: bold;
+        }
+
+        p.info{
+            color: #ADFF2F;
+        }
+
+        p.warn{
+            color: #D9B825;
+        }
+
+        p.error{
+            color: #D9534F;
+        }
+    </style>
+</head>
+<body onload="start()">
+    Hello Log!
+</body>
+</html>

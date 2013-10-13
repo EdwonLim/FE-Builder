@@ -1,0 +1,15 @@
+{
+    "main" : "main.html",
+    "name" : "FE-Builder",
+    "description" : "FE-Builder",
+    "version" : "0.1.0",
+    "keywords" : [ "FE", "Builder"],
+    "window" : {
+        "icon" : "logo.png",
+        "width" : 500,
+        "height" : 200,
+        "toolbar" : false,
+        "frame" : false,
+        "resizable" : false
+    }
+}
