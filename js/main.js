@@ -153,7 +153,7 @@
         });
 
         doms.logOuter.click(function(){
-            GUI.Shell.openExternal('http://127.0.0.1:6888/log/index.html');
+            GUI.Shell.openExternal('http://127.0.0.1:6888/index.html');
         });
     };
 
