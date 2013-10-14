@@ -102,8 +102,9 @@ Beta (0.1.0)
 * Win [FE-Builder-0.1.0-Win.zip](http://pan.baidu.com/s/1uvNaT)
 
 
-## TODO List
+## TODO Listt
 
 * 优化界面。
-* 优化日志面板。
+* 优化日志输出。
+* 优化远程日志面板。
 * 模拟数据支持post请求。
