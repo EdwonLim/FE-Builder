@@ -98,8 +98,8 @@ function exec(args) {
 
 Beta (0.1.0)
 
-* Mac [FE-Builder-0.1.0-Mac.zip](http://http://febuilder.sinaapp.com/)
-* Win [FE-Builder-0.1.0-Win.zip](http://http://febuilder.sinaapp.com/)
+* Mac [FE-Builder-0.1.0-Mac.zip](http://pan.baidu.com/s/1wxGlz)
+* Win [FE-Builder-0.1.0-Win.zip](http://pan.baidu.com/s/1uvNaT)
 
 
 ## TODO List
