@@ -6,6 +6,9 @@ body {
     -webkit-user-select: none;
 }
 #top-bar {
+
+}
+#top-bar .navbar-brand {
     -webkit-app-region: drag;
 }
 #top-bar .navbar-header button.pull-right {
