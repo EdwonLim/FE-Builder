@@ -1,4 +1,4 @@
-#FE-Builder-前端打包工具（Beta）
+# FE-Builder-前端打包工具（Beta）
 
 
 ## Introduction
@@ -52,7 +52,7 @@ project
 ## Quick Start
 
 * 按照约定目录，建立项目，启动服务后，项目的访问路径为`http://127.0.0.1:端口号(默认8080)/项目名/`。
-* `JavaScript`引入方式是`$Import('path/to/file.js')`，如果是`CoffeeScript`，那么拓展名为`.coffee`，相对路径的`root`为`src/js/`。(`.js`可以省略)
+* `JavaScript`引入方式是`$Import('path/to/file.js')`，如果是`CoffeeScript`，那么拓展名为`.coffee`，相对路径的`root`为`src/js/`。(`.js`可以省略)
 * `Less`使用标准的引入方式，`@import "path/to/file"`，相对路径的`root`为`src/less/`。
 * 在`DEV`开发环境下，访问项目路径下的`js`和`css`目录中的文件，会根据`conf`配置返回内容，其他文件会直接返回`src`下的相应文件。
   * 例如访问`http://127.0.0.1:8080/example/js/index.js`，那么会根据`conf/js/index.js`返回相应内容，如果是`index.min.js`，那么会压缩后返回。
