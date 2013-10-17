@@ -12,7 +12,7 @@
 * 支持[LESS](http://lesscss.net)预编译，支持动态打包合并，支持代码压缩。
 * 支持测试数据模拟，支持Json数据返回，支持请求动态处理，支持Ajax和Jsonp。
 
-## components
+## Components
 
 * 基于[NodeJS](http://nodejs.org)搭建服务器，快速搭建本地服务环境。
 * 基于[Sokcet.io](http://socket.io)的远程日志输出。
@@ -47,7 +47,7 @@ project
 * `src`为源码目录，`js`子目录下为`JavaScript`或`CoffeeScript`源码，`less`子目录下为`less`源码。
 * `conf`为配置目录，`js`子目录下为`JavaScript`文件打包配置，`css`子目录下为`css`文件打包配置。
 * `production`为产品目录，为打包后的项目代码。
-* `date`为模拟数据目录。
+* `data`为模拟数据目录。
 
 ## Quick Start
 
@@ -102,7 +102,7 @@ Beta (0.1.0)
 * Win [FE-Builder-0.1.0-Win.zip](http://pan.baidu.com/s/1uvNaT)
 
 
-## TODO Listt
+## TODO Listti
 
 * 优化界面。
 * 优化日志输出。
