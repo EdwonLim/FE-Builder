@@ -103,9 +103,9 @@ function exec(args) {
 Beta (0.1.1)
 
 更新内容：
-1. 对css进行多浏览器兼容，例如自动添加`-webkit-`、`-moz-`前缀。
-2. 日志输出优化。
-3. 界面拖动问题修复。
+* 对css进行多浏览器兼容，例如自动添加`-webkit-`、`-moz-`前缀。
+* 日志输出优化。
+* 界面拖动问题修复。
 
 * Mac [FE-Builder-0.1.1-Mac.zip]()
 * Win [FE-Builder-0.1.1-Win.zip]()
