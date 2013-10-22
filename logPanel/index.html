@@ -16,10 +16,12 @@
                 while (ms.length < 3) {
                     ms = '0' + ms;
                 }
-                data.tag += '&nbsp;';
-                while (data.tag.length < 15) {
-                    data.tag = '&nbsp;' + data.tag;
+                if (data.tag.length < 15) {
+                    for (var i = 0, l = 15 - data.tag.length; i < l; i ++) {
+                        data.tag = '&nbsp;' + data.tag;
+                    }
                 }
+                data.tag += '&nbsp;';
                 document.body.innerHTML += '<p class="' + data.type + '">[' + data.tag + '] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</p>';
             });
         }
