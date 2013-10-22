@@ -20,7 +20,7 @@
 * 使用[UglifyJS](https://github.com/mishoo/UglifyJS)对JavaScript代码进行格式化和压缩。
 * 使用[CoffeeScript](http://jashkenas.github.io/coffee-script/)编译器进行Coffee预编译。
 * 使用[Node-Less](https://gitcafe.com/EdwonLim/node-less)进行LESS预编译。
-* 使用[Node-Css-Prefix](https://gitcafe.com/EdwonLim/Node-Css-Prefix)对Css进行浏览器兼容，如自动添加`-webkit-`、`-moz`前缀等。
+* 使用[Node-Css-Prefix](https://gitcafe.com/EdwonLim/Node-Css-Prefix)对Css进行浏览器兼容，如自动添加`-webkit-`、`-moz-`前缀等。
 * 使用[ycssmin](https://github.com/yui/ycssmin)对CSS进行压缩。
 * 界面基于[jQuery](http://jquery.com)，[BootStrap v3](http://v3.bootcss.com/)，[jQuery custom content scroller](http://manos.malihu.gr/jquery-custom-content-scroller/)构建的。
 
@@ -110,8 +110,8 @@ Beta (0.1.1)
 
 下载地址：
 
-* Mac [FE-Builder-0.1.1-Mac.zip]()
-* Win [FE-Builder-0.1.1-Win.zip]()
+* Mac [FE-Builder-0.1.1-Mac.zip](http://pan.baidu.com/s/1suLCO)
+* Win [FE-Builder-0.1.1-Win.zip](http://pan.baidu.com/s/1JQAv)
 
 Beta (0.1.0)
 
