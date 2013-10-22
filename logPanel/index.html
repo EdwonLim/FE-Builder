@@ -9,10 +9,17 @@
         var start = function() {
         var socket = io.connect('http://127.0.0.1:6888/');
             socket.on('log', function (data) {
-                var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds();
+                var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds() + '';
                 h = h < 10 ? '0' + h : h;
                 m = m < 10 ? '0' + m : m;
                 s = s < 10 ? '0' + s : s;
+                while (ms.length < 3) {
+                    ms = '0' + ms;
+                }
+                data.tag += ' ';
+                while (data.tag.length < 3) {
+                    data.tag = ' ' + data.tag;
+                }
                 document.body.innerHTML += '<p class="' + data.type + '">[' + data.tag + '] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</p>';
             });
         }
