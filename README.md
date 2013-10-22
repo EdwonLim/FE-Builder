@@ -3,7 +3,35 @@
 
 ## Introduction
 
-前端代码打包工具，支持JavaScript，CoffeeScript，CSS， LESS代码的预编译、打包合并、压缩等，支持实时动态打包，支持Json数据模拟。
+前端代码打包工具，适合于前端工作者及小中型开发团体快速构建和发布前端工程。
+
+具体功能：
+
+* 动态脚本 - `JavaScript` 代码合并、压缩：
+  * `JavaScrirpt` 动态合并、压缩；
+  * `CoffeeScript` 预编译，并可合并进`JavaScript`。
+* 样式表 - `CSS` 代码合并、压缩：
+  * 基于`LESS`构建的（一种`CSS`预处理语言，如果对他不熟悉，那么可以直接写`CSS`代码，只是文件扩展名不同罢了）；
+  * `LESS` 预编译、动态合并、压缩；
+  * `Image` 图片绝对路径转换；
+  * 自动添加`CSS`兼容性代码
+* 版本号系统 - 解决开发和线上版本问题：
+  * 为`html`中的`script`和`link`所引入的`js`和`css`文件加上版本号；
+  * 为`css`中的`image`加上版本号；
+  * 支持版本号写入页面全局变量。
+* 支持模拟`Ajax`和`Jsonp` - 让测试更简单：
+  * 支持`Ajax`的`get`请求，并以`json`数据格式返回；
+  * 支持`jsonp`请求，并以`json`数据格式返回；
+  * 支持读取`*.json`文件数据;
+  * 支持使用自定义的`JavaScript`来处理请求。
+* 本地服务器 - 不懂后端也能建服务：
+  * 可切换的服务器环境；
+  * 动态增添项目，无需重启服务；
+  * 避免本地开发的种种问题。
+* 远程日志 - 在浏览器窗口中显示工具日志信息，用前端技术解决前端问题。
+* 可视化UI - 直观、方便、容易操作。
+* 兼容系统 - 现兼容MacOS及Window操作系统。
+
 
 ## Features
 
@@ -100,7 +128,20 @@ function exec(args) {
 
 ## Download
 
-Beta (0.1.1)
+Beta (0.2.0) 2013-10-23
+
+更新内容：
+
+1. 增加版本号系统。
+2. 优化日志输出。
+3. 修复已知Bug。
+
+下载地址：
+
+* Mac [FE-Builder-0.2.0-Mac.zip](http://pan.baidu.com/s/1JUha)
+* Win [FE-Builder-0.2.0-Win.zip](http://pan.baidu.com/s/13QkuV)
+
+Beta (0.1.1) 2013-10-22
 
 更新内容：
 
@@ -113,7 +154,7 @@ Beta (0.1.1)
 * Mac [FE-Builder-0.1.1-Mac.zip](http://pan.baidu.com/s/1suLCO)
 * Win [FE-Builder-0.1.1-Win.zip](http://pan.baidu.com/s/1JQAv)
 
-Beta (0.1.0)
+Beta (0.1.0) 2013-10-14
 
 下载地址：
 
