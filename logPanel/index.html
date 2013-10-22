@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <title>FE-Builder Log Panel</title>
     <link href="favicon.ico" type="image/x-icon" rel=icon />
-    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script>
-        var start = function() {
-        var socket = io.connect('http://127.0.0.1:6888/');
+        var include = function(arr, el) {
+            for (var i = 0, l = arr.length; i < l; i ++) {
+                if (arr[i] == el) {
+                    return;
+                }
+            }
+            arr.push(el);
+        };
+
+        $(function() {
+            var debugs = ['all', 'error', 'warn', 'info'], tags = ['all'], debugIndex = 0, tagIndex = 0;
+            var socket = io.connect('http://127.0.0.1:6888/');
+            var showLog = function() {
+                $('.toolbar label.mid').eq(0).html(debugs[debugIndex] == 'all' ? 'All Debug' : debugs[debugIndex].toUpperCase());
+                $('.toolbar label.mid').eq(1).html(tags[tagIndex] == 'all' ? 'All Tags' : tags[tagIndex]);
+                $('p').hide();
+                $('p' + (debugs[debugIndex] == 'all' ? '' : ('.' + debugs[debugIndex])) + (tags[tagIndex] == 'all' ? '' : ('[data-tag=' + tags[tagIndex].replace(/\s/, '-')) + ']')).show();
+            };
+
             socket.on('log', function (data) {
+                include(tags, data.tag);
                 var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds() + '';
                 h = h < 10 ? '0' + h : h;
                 m = m < 10 ? '0' + m : m;
@@ -16,39 +35,73 @@
                 while (ms.length < 3) {
                     ms = '0' + ms;
                 }
-                document.body.innerHTML += '<p class="' + data.type + '">[<span>' + data.tag + '</span>] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</p>';
+                var node = $('<p class="' + data.type + '" data-tag="' + data.tag.replace(/\s/, '-') + '"><span>[</span><span class="tag">' + data.tag + '</span><span>] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</span></p>').appendTo('body');
+                if (!((tags[tagIndex] == 'all' || tags[tagIndex] == data.tag) && (debugs[debugIndex] == 'all' || debugs[debugIndex] == data.type))) {
+                    node.hide();
+                }
+                if ($(document).height() - $('body').scrollTop() - $(window).height() < 200) {
+                    $('body').animate({
+                        scrollTop: $(document).height()
+                    }, 10);
+                }
             });
-        }
+
+            $('.toolbar label.left').eq(0).click(function(){
+                if (debugIndex == 0) {
+                    debugIndex = debugs.length - 1;
+                } else {
+                    debugIndex -= 1;
+                }
+                showLog();
+            });
+
+            $('.toolbar label.right').eq(0).click(function(){
+                if (debugIndex == debugs.length - 1) {
+                    debugIndex = 0;
+                } else {
+                    debugIndex += 1;
+                }
+                showLog();
+            });
+
+            $('.toolbar label.left').eq(1).click(function(){
+                if (tagIndex == 0) {
+                    tagIndex = tags.length - 1;
+                } else {
+                    tagIndex -= 1;
+                }
+                showLog();
+            });
+
+            $('.toolbar label.right').eq(1).click(function(){
+                if (tagIndex == tags.length - 1) {
+                    tagIndex = 0;
+                } else {
+                    tagIndex += 1;
+                }
+                showLog();
+            });
+        });
     </script>
     <style type="text/css">
-        body {
-            background-color: #000000;
-        }
-        p {
-            letter-spacing: 2px;
-            font-weight: lighter;
-            font-size: 15px;
-            line-height: 12px;
-        }
-        p span {
-            display: inline-block;
-            width: 120px;
-            text-align: right;
-            padding-right: 5px;
-        }
-        p.info {
-            color: #ADFF2F;
-        }
-
-        p.warn {
-            color: #D9B825;
-        }
-
-        p.error {
-            color: #D9534F;
-        }
+        body {background-color:#000000;padding-top:50px;}
+        p {float: left;margin-top:-5px;letter-spacing:2px;font-weight:lighter;font-size:15px;clear:both;}
+        p span {float:left;}
+        p span.tag {width:120px;text-align:right;padding-right:5px;}
+        p.info {color:#ADFF2F;}
+        p.warn {color:#D9B825;}
+        p.error {color:#D9534F;}
+        .toolbar {position:fixed;top:0;left:0;width:100%;height:50px;background-color:rgba(0, 0, 0, 0.6);border-bottom:1px solid #FFFFFF;color:#FFFFFF;}
+        .toolbar label {display:block;float:left;line-height:50px;font-size:20px;text-align:center;}
+        .toolbar label.left {width:30px;margin-left:50px;cursor:pointer;}
+        .toolbar label.mid {width:150px;}
+        .toolbar label.right {width:30px;cursor:pointer;}
     </style>
 </head>
-<body onload="start()">
+<body>
+<div class="toolbar">
+    <label class="left"><</label><label class="mid">All Debug</label><label class="right">></label>
+    <label class="left"><</label><label class="mid">All Tags</label><label class="right">></label>
+</div>
 </body>
 </html>
