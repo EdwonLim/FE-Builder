@@ -20,6 +20,7 @@
 * 使用[UglifyJS](https://github.com/mishoo/UglifyJS)对JavaScript代码进行格式化和压缩。
 * 使用[CoffeeScript](http://jashkenas.github.io/coffee-script/)编译器进行Coffee预编译。
 * 使用[Node-Less](https://gitcafe.com/EdwonLim/node-less)进行LESS预编译。
+* 使用[Node-Css-Prefix](https://gitcafe.com/EdwonLim/Node-Css-Prefix)对Css进行浏览器兼容，如自动添加`-webkit-`、`-moz`前缀等。
 * 使用[ycssmin](https://github.com/yui/ycssmin)对CSS进行压缩。
 * 界面基于[jQuery](http://jquery.com)，[BootStrap v3](http://v3.bootcss.com/)，[jQuery custom content scroller](http://manos.malihu.gr/jquery-custom-content-scroller/)构建的。
 
@@ -27,6 +28,9 @@
 
 #### 主界面
 ![主界面](http://febuilder.sinaapp.com/FEB.png)
+
+#### 日志页面
+![日志页面](http://febuilder.sinaapp.com/FEB_log.png)
 
 ## Agreed Directory
 
@@ -96,15 +100,19 @@ function exec(args) {
 
 ## Download
 
+Beta (0.1.1)
+
+更新内容：
+1. 对css进行多浏览器兼容，例如自动添加`-webkit-`、`-moz-`前缀。
+2. 日志输出优化。
+3. 界面拖动问题修复。
+
+* Mac [FE-Builder-0.1.1-Mac.zip]()
+* Win [FE-Builder-0.1.1-Win.zip]()
+
 Beta (0.1.0)
 
 * Mac [FE-Builder-0.1.0-Mac.zip](http://pan.baidu.com/s/1wxGlz)
 * Win [FE-Builder-0.1.0-Win.zip](http://pan.baidu.com/s/1uvNaT)
 
 
-## TODO Listti
-
-* 优化界面。
-* 优化日志输出。
-* 优化远程日志面板。
-* 模拟数据支持post请求。
