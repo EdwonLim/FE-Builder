@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>FE-Builder Log Panel</title>
+    <link href="favicon.ico" type="image/x-icon" rel=icon />
     <script src="/socket.io/socket.io.js"></script>
     <script>
         var start = function() {
@@ -20,26 +21,26 @@
         body {
             background-color: #000000;
         }
-        p{
+        p {
+            letter-spacing: 2px;
             font-weight: lighter;
-            font-size: 18px;
-            line-height: 20px;
+            font-size: 15px;
+            line-height: 12px;
         }
 
-        p.info{
+        p.info {
             color: #ADFF2F;
         }
 
-        p.warn{
+        p.warn {
             color: #D9B825;
         }
 
-        p.error{
+        p.error {
             color: #D9534F;
         }
     </style>
 </head>
 <body onload="start()">
-    Hello Log!
 </body>
 </html>
