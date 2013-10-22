@@ -104,38 +104,3 @@ body {
 #serverControl .form-inline input {
     width: 80px;
 }
-
-#LogInfo {
-    display: none;
-    position: absolute;
-    left: 40px;
-    top: 55px;
-    height: 145px;
-    width: 460px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#LogInfo .content p{
-    font-size: 90%;
-    font-weight: bold;
-}
-
-#LogInfo .content p.info{
-    color: #ADFF2F;
-}
-
-#LogInfo .content p.warn{
-    color: #D9B825;
-}
-
-#LogInfo .content p.error{
-    color: #D9534F;
-}
-
-#LogInfo .outBtn {
-    position: fixed;
-    right: 40px;
-    top: 65px;
-    color: #FFFFFF;
-}

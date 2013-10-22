@@ -46,10 +46,7 @@
             serverSwitch : $('#serverControl .switch1'),
             productSwitch : $('#serverControl .switch2'),
             projectControl : $('#content'),
-            projectContent : $('#ul-list'),
-            logControl : $("#LogInfo"),
-            logOuter : $('#LogInfo .outBtn'),
-            logContent : $("#LogInfo .content")
+            projectContent : $('#ul-list')
         };
         doms.projectControl.mCustomScrollbar({
             autoHideScrollbar : true,
@@ -57,12 +54,6 @@
                 updateOnContentResize: true
             },
             theme : 'dark'
-        });
-        doms.logControl.mCustomScrollbar({
-            autoHideScrollbar : true,
-            advanced:{
-                updateOnContentResize: true
-            }
         });
     };
 
@@ -112,9 +103,7 @@
         doms.serverMenu.click(function(){
             if (doms.serverControl.is(':hidden')) {
                 doms.serverControl.show();
-                doms.logControl.hide();
                 doms.serverMenu.addClass('active');
-                doms.logMenu.removeClass('active');
             } else {
                 doms.serverControl.hide();
                 doms.serverMenu.removeClass('active');
@@ -122,18 +111,7 @@
         });
 
         doms.logMenu.click(function(){
-            if (doms.logControl.is(':hidden')) {
-                doms.logControl.show();
-                doms.serverControl.hide();
-                doms.logMenu.addClass('active');
-                doms.serverMenu.removeClass('active');
-                setTimeout(function() {
-                    doms.logControl.mCustomScrollbar("scrollTo", "bottom");
-                }, 500);
-            } else {
-                doms.logControl.hide();
-                doms.logMenu.removeClass('active');
-            }
+            GUI.Shell.openExternal('http://127.0.0.1:6888/index.html');
         });
 
         doms.serverSwitch.on('switch-change', function (e, data) {
@@ -150,10 +128,6 @@
         doms.productSwitch.on('switch-change', function (e, data) {
             control[data.value ? 'toDEV' : 'toPD']();
             showMessage('Change environment to "' + (data.value ? 'Development' : 'Product')  + '" .');
-        });
-
-        doms.logOuter.click(function(){
-            GUI.Shell.openExternal('http://127.0.0.1:6888/index.html');
         });
     };
 
@@ -221,22 +195,8 @@
         });
     };
 
-    var ouputLog = function(tag, message, type) {
-        var d = new Date(), h = d.getHours(), m = d.getMinutes(), s = d.getSeconds(), ms = d.getMilliseconds();
-        h = h < 10 ? '0' + h : h;
-        m = m < 10 ? '0' + m : m;
-        s = s < 10 ? '0' + s : s;
-        $('<p class="' + type + '">[' + tag + '] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + message +'</p>').appendTo(doms.logContent);
-        setTimeout(function() {
-            doms.logControl.mCustomScrollbar("scrollTo", "bottom");
-        }, 500);
-    };
-
     var execLog = function() {
         logService.start();
-        debug.pullLog(function(tag, message, type) {
-            ouputLog(tag, message, type);
-        });
     };
 
     $(document).ready(function() {
