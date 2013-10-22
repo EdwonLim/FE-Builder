@@ -16,9 +16,9 @@
                 while (ms.length < 3) {
                     ms = '0' + ms;
                 }
-                data.tag += ' ';
+                data.tag += '&nbsp;';
                 while (data.tag.length < 15) {
-                    data.tag = ' ' + data.tag;
+                    data.tag = '&nbsp;' + data.tag;
                 }
                 document.body.innerHTML += '<p class="' + data.type + '">[' + data.tag + '] - ' + h + ':' + m + ':' + s + ' - ' + ms + ' : ' + data.message +'</p>';
             });
