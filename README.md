@@ -55,10 +55,10 @@
 ## Interface
 
 #### 主界面
-![主界面](http://febuilder.sinaapp.com/FEB.png)
+![主界面](http://edwonlim.gitcafe.com/pimg/feb/FEB.png)
 
 #### 日志页面
-![日志页面](http://febuilder.sinaapp.com/FEB_log.png)
+![日志页面](http://edwonlim.gitcafe.com/pimg/feb//FEB_log.png)
 
 ## Agreed Directory
 
