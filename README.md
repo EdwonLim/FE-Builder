@@ -128,6 +128,18 @@ function exec(args) {
 
 ## Download
 
+
+Beta (0.2.1) 2013-11-05
+
+更新内容：
+
+1. 修复已知Bug。
+
+下载地址：
+
+* Mac [FE-Builder-0.2.1-Mac.zip]()
+* Win [FE-Builder-0.2.1-Win.zip]()
+
 Beta (0.2.0) 2013-10-23
 
 更新内容：
