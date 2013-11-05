@@ -137,8 +137,8 @@ Beta (0.2.1) 2013-11-05
 
 下载地址：
 
-* Mac [FE-Builder-0.2.1-Mac.zip]()
-* Win [FE-Builder-0.2.1-Win.zip]()
+* Mac [FE-Builder-0.2.1-Mac.zip](http://pan.baidu.com/s/15Tkp0)
+* Win [FE-Builder-0.2.1-Win.zip](http://pan.baidu.com/s/1xLGv9)
 
 Beta (0.2.0) 2013-10-23
 
