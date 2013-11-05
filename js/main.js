@@ -92,7 +92,7 @@
             doms.folderChose[0].onchange = function() {
                 var name = window.prompt('Project Name :');
                 addProject(name, doms.folderChose.val());
-                sowMessage('Project "' + name + '" has been added!');
+                showMessage('Project "' + name + '" has been added!');
                 doms.folderChose.val('');
             };
             return function() {
